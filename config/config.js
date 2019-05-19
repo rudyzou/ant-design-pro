@@ -77,6 +77,19 @@ export default {
   // https://ant.design/docs/react/customize-theme-cn
   theme: {
     'primary-color': primaryColor,
+    // 'font-size-base': '12px',
+    // 'font-size-sm': '10px',
+    // 'line-height-base':'20px',
+    'form-item-margin-bottom':'8px',
+    'border-radius-base':'0px',
+    'border-radius-sm':'0px',
+    // vertical paddings
+    'padding-lg': '22px', // containers
+    'padding-md': '12px', // small containers and buttons
+    'padding-sm': '8px', // Form controls and items
+    'padding-xs': '4px', // small items
+    'table-padding-vertical': '10px',
+    'table-padding-horizontal': '10px',
   },
   // proxy: {
   //   '/server/api/': {

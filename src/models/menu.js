@@ -6,6 +6,110 @@ import { menu } from '../defaultSettings';
 
 const { check } = Authorized;
 
+const menuOriginData = [
+  // dashboard
+  { path: '/', redirect: '/dashboard/analysis', authority: ['admin', 'user'] },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    icon: 'dashboard',
+    routes: [
+      {
+        path: '/dashboard/analysis',
+        name: 'analysis',
+      },
+      {
+        path: '/dashboard/monitor',
+        name: 'monitor',
+      },
+      {
+        path: '/dashboard/workplace',
+        name: 'workplace',
+      },
+    ],
+  },
+  {
+    path: '/polling',
+    name: 'polling',
+    icon: 'solution',
+    routes: [
+      {
+        path: '/polling/pollingTaskAssign',
+        name: 'pollingTaskAssign',
+      },
+      {
+        path: '/polling/myPollingTask',
+        name: 'myPollingTask',
+      },
+    ],
+  },
+  {
+    path: '/query',
+    name: 'query',
+    icon: 'ordered-list',
+    routes: [
+      {
+        path: '/query/pollingTask/1',
+        name: 'pollingTask',
+      },
+      {
+        path: '/query/construction/2',
+        name: 'construction',
+      },
+      {
+        path: '/query/breakdown/3',
+        name: 'breakdown',
+      },
+    ],
+  },
+  {
+    path: '/setting',
+    name: 'setting',
+    icon: 'setting',
+    routes: [
+      {
+        path: '/setting/metaData',
+        name: 'metaData',
+      },
+      {
+        path: '/setting/scheduleTask',
+        name: 'scheduleTask',
+      },
+      {
+        path: '/setting/reportManager',
+        name: 'reportManager',
+      },
+    ],
+  },
+  {
+    path: '/manager',
+    name: 'manager',
+    icon: 'team',
+    routes: [
+      {
+        path: '/manager/dept',
+        name: 'dept',
+      },
+      {
+        path: '/manager/user',
+        name: 'user',
+      },
+      {
+        path: '/manager/role',
+        name: 'role',
+      },
+      {
+        path: '/manager/menu',
+        name: 'menu',
+      },
+      {
+        path: '/manager/logmana',
+        name: 'logmana',
+      },
+    ],
+  },
+]
+
 // Conversion router to menu.
 function formatter(data, parentAuthority, parentName) {
   if (!data) {
@@ -19,9 +123,9 @@ function formatter(data, parentAuthority, parentName) {
 
       let locale = 'menu';
       if (parentName && parentName !== '/') {
-        locale = `${parentName}.${item.name}`;
+        locale = `${parentName}.${item.mcode || item.name}`;
       } else {
-        locale = `menu.${item.name}`;
+        locale = `menu.${item.mcode || item.name}`;
       }
       // if enableMenuLocale use item.name,
       // close menu international
@@ -110,7 +214,7 @@ export default {
   effects: {
     *getMenuData({ payload }, { put }) {
       const { routes, authority, path } = payload;
-      const originalMenuData = memoizeOneFormatter(routes, authority, path);
+      const originalMenuData = memoizeOneFormatter(menuOriginData, authority, path);
       const menuData = filterMenuData(originalMenuData);
       const breadcrumbNameMap = memoizeOneGetBreadcrumbNameMap(originalMenuData);
       yield put({

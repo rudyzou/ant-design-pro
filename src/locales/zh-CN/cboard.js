@@ -1,0 +1,28 @@
+export default {
+    'menu.setting': '配置',
+    'menu.setting.dataSource': '数据源管理',
+    'menu.setting.dataSet': '数据集管理',
+    'menu.setting.widget': '图表设计',
+    'menu.setting.dashboard': '看板设计',
+    'menu.setting.dashboardCtg': '看板分类',
+    'menu.setting.homePageSet': '主页设置',
+    'menu.setting.scheduleTask': '定时任务',
+    'menu.setting.resourceShare': '资源分享',
+    'menu.setting.metaData': '元数据管理',
+    'menu.setting.reportManager': '报表管理',
+    'menu.polling': '巡检管理',
+    'menu.polling.pollingTaskAssign': '任务分配',
+    'menu.polling.myPollingTask': '我的任务',
+    'menu.query': '综合查询',
+    'menu.query.pollingTask': '巡检信息',
+    'menu.query.construction': '工程信息',
+    'menu.query.breakdown': '故障信息',
+    'menu.manager': '系统管理',
+    'menu.manager.user': '用户管理',
+    'menu.manager.role': '角色管理',
+    'menu.manager.menu': '菜单管理',
+    'menu.manager.dept': '部门管理',
+    'menu.manager.logmana': '日志管理',
+
+
+}

@@ -123,6 +123,7 @@ class BasicLayout extends React.Component {
             onCollapse={this.handleMenuCollapse}
             menuData={menuData}
             isMobile={isMobile}
+            openKeys={['/query' ,'/setting' ,'/polling' , '/manager' , '/dashboard']}
             {...this.props}
           />
         )}
