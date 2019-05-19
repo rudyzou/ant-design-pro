@@ -175,6 +175,7 @@ class QueryPage extends Component {
       break;
 
       case 'checkbox':
+          
       break;
 
       case 'radio':

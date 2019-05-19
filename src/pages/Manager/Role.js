@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'dva';
 import moment from 'moment';

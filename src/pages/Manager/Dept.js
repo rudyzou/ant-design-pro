@@ -7,7 +7,6 @@ import {
   Col,
   Row,
   Input,
-  Radio,
   InputNumber,
   Icon,
 } from 'antd';
@@ -17,7 +16,6 @@ import styles from './Dept.less';
 
 const { TreeNode } = Tree;
 const {Search} = Input;
-const RadioGroup = Radio.Group;
 const formItemLayout = {
   labelCol: {
     xs: { span: 24 },
