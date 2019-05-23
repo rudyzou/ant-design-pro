@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   Card,
   Form,
@@ -15,6 +15,7 @@ import {
 import PropTypes from 'prop-types';
 import StandardTable from '@/components/StandardTable';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
+import CheckboxFilter from './CheckboxFilter';
 import styles from './index.less';
 
 
@@ -27,7 +28,7 @@ const getValue = obj =>
     .join(',');
 
 @Form.create()
-class QueryPage extends Component {
+class QueryPage extends PureComponent {
 
   static propTypes = {
     title: PropTypes.string,
@@ -173,14 +174,7 @@ class QueryPage extends Component {
           </AutoComplete>
           )
       break;
-
-      case 'checkbox':
-          
-      break;
-
-      case 'radio':
-      break;
-
+      
       case 'treeSelect':
       break;
 

@@ -12,6 +12,9 @@ const tableListDataSource = {
           label: "专业",
           dataIndex: "seqmQxx",
           type: 'select',
+          componentProps:{
+            mode:"multiple"
+          },
           options: [{
               value: 1,
               name: '化学',
